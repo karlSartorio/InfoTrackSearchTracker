@@ -1,8 +1,23 @@
-﻿@{
+﻿@using InfoTrackSearchTracker.Utilities
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>
+        The CEO from InfoTrack is very interested in SEO and how this can improve Sales. Every morning he searches
+        the keyword “land registry searches” in Google and counts down to see where and how many times their
+        company, www.infotrack.co.uk sits on the list. Seeing the CEO do this every day, a smart software developer
+        at InfoTrack decides to write a small application for him that will automatically perform this operation and return
+        the result to the screen.
+    </p>
+    <p>
+        The following is my solution.
+    </p>
+    <div class="col-sm-6 small-margin-bottom" style="text-align:center">
+    </div>
+    <div class="align-content-center">
+        <a class="btn btn-primary" asp-controller="SearchTrack" asp-action="Index">Begin</a>
+    </div>
 </div>

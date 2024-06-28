@@ -1,0 +1,49 @@
+﻿@using InfoTrackSearchTracker.Utilities
+@model InfoTrackSearchTracker.Models.SearchTrack.SearchTrackViewModel
+@{
+    ViewData["Title"] = "Search Track";
+}
+
+<div>
+    <h1 class="display-4 text-center">Search Track</h1>
+    <div class="text-center">
+        <p>
+            Search: "@Model.SearchString"
+        </p>
+        <p>
+            Search Engine: "@Model.SearchEngine"
+        </p>
+    </div>
+    <div class="text-center">
+        <p>
+            "@Model.URLSearch" has occurred @Model.NumberOfOccurrence time(s) and found in postion(s): @Model.Postions
+            out of 100 search results
+        </p>
+    </div>
+    <hr />
+    <p>
+        Want to see how many times certain site appears in a custom search?
+    </p>
+    <form method="post">
+        <div asp-validation-summary="All"></div>
+        <div class="border p-3 mt-4">
+            <div class="mb-3">
+                <label asp-for="SearchString" class="p-0"></label>
+                <input asp-for="SearchString" class="form-control"/>
+                <span asp-validation-for="SearchString" class="text-bg-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="URLSearch" class="p-0"></label>
+                <input asp-for="URLSearch" class="form-control" />
+                <span asp-validation-for="URLSearch" class="text-bg-danger"></span>
+            </div>
+            <div class="mb-3">
+            <select asp-for="SearchEngine" asp-items="Html.GetEnumSelectList<SearchEngine>()" class="form-control"></select>
+            <span asp-validation-for="SearchEngine" class="text-bg-danger"></span>
+            </div>
+        </div>
+        <div class="col-12">
+                <button type="submit" class="btn btn-primary form-control">Search</button>
+        </div>
+    </form>
+</div>
